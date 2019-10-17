@@ -1,19 +1,22 @@
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![Build Status] (https://travis-ci.org/jesusrpII/Proyecto-IV.svg?branch=master)] (https://travis-ci.org/jesusrpII/Proyecto-IV)
+
+
 # Proyecto-IV
-Proyecto que se va a desarrollar a lo largo de la asignatura de Infraestructura Virtual
+Proyecto que se va a desarrollar a lo largo de la asignatura de Infraestructura Virtual 2019-2020
 
 ## Servicio
-El servicio va a tratar de recibir unas imagenes y dado un factor de compresión, comprimir dichas imagenes (convertirlas en imágenes con menor peso,con mejor o peor calidad dependiendo de los parámetros que se indiquen).
+El servicio va a tratar de recibir unas imagenes y dado un factor de compresión, comprimir dichas imagenes (convertirlas en imagenes con menor peso,con mejor o peor calidad dependiendo de los parámetros que se indiquen).
 
-El objetivo del servicio es aportar una solución rápida al usuario a la hora de ahorrar espacio en el almacenamiento.
+El objetivo del servicio es aportar una solución rápida al usuario a la hora de ahorrar espacio en el almacenamiento de imagenes.
 
 ## Herramientas
 
-El proyecto se implementará en el lenguaje de programación Java (es uno de los lenguajes con los que mas he trabajado) , mediante el uso del framework Spring Boot.
+El proyecto se implementará en el lenguaje de programación Java, debido a que es uno de los lenguajes con los que más he practicado , mediante el uso del framework [Spring Boot](https://spring.io/projects/spring-boot).
 
-Será necesario utilizar un broker de mensajes para gestionar la cola de tareas, en este caso se utilizará RabbitMQ.
+Será necesario utilizar un broker de mensajes para gestionar la cola de tareas, en este caso se utilizará [RabbitMQ](https://www.rabbitmq.com/).
 
-Como sistema de log (para conocer todo lo que ocurre en el microservicio) se utilizará Logstash.
+Como sistema de log (para conocer todo lo que ocurre en el servicio) se utilizará [Logstash](https://www.elastic.co/products/logstash).
 
-No será necesario utilizar ninguna base de datos, pues en principio el objetivo de este servicio no es almacenar ninguna imágen o información.
+No será necesario utilizar ninguna base de datos, pues en principio el objetivo de este servicio no es almacenar ninguna imagen o información.
 
 
