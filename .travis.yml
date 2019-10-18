@@ -3,6 +3,10 @@ jdk:
 -oraclejdk11
 -oraclejdk8
 
+git:
+  depth: 25
+  quiet: true
+
 script:
 -cd imageCo
 -mvn clean install
