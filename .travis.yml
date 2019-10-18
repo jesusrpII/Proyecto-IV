@@ -1,12 +1,8 @@
-git:
-  depth: 3
-  quiet: true
-
 language: java
 jdk: 
--oraclejdk11
--oraclejdk8
+  -oraclejdk11
+  -oraclejdk8
 
 script:
--cd imageCo
--mvn clean install
+  -cd imageCo
+  -mvn clean install
