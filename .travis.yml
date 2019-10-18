@@ -1,2 +1,8 @@
 language: java
-jdk: oraclejdk11
+jdk: 
+-oraclejdk11
+-oraclejdk8
+
+script:
+-cd imageCo
+-mvn clean install
