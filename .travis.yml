@@ -2,4 +2,6 @@ language: java
 jdk: 
   -oraclejdk11
   
-script: cd imageCo  mvn clean install
+script: 
+  -cd imageCo
+  -mvn clean install
