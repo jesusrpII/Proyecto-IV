@@ -23,13 +23,24 @@ language: java   #Especificamos lenguaje
 jdk:             # Y version de jdk
   -oraclejdk11
   
-script:              # Indicamos la carpeta donde se situa el pom.xml 
-			#y la compilacion y ejecución de los test con maven
+script:              # Indicamos la carpeta donde se situa el pom.xml y la compilacion y ejecución de los test con maven
   - cd imageCo
   - mvn clean install
 
 ```
 
+Adicionalmente se ha enlazado el repositorio con shippable y creado el archivo shippable.yml (es muy parecido al de travis):
+
+```yaml
+language: java   #Especificamos lenguaje
+jdk:             # Y version de jdk
+  - oraclejdk11
+  
+build:     # Indicamos la carpeta donde se situa el pom.xml y la compilacion y ejecución de los test con maven
+  ci:
+     - cd imageCo
+     - mvn clean install
+```
 
 
 ### Clonar repositorio y probar los test
