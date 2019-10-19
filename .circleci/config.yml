@@ -1,0 +1,15 @@
+version: 2
+jobs:
+  build:
+    docker:
+      # Se especifica la versión
+      - image: circleci/openjdk:11-jdk
+
+	#Se indica el directorio a trabajar
+    working_directory: ~/repo/imageCo
+
+	steps:
+
+      - checkout
+
+      - run: mvn clean install
