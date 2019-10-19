@@ -8,3 +8,4 @@ Como sistema de log (para conocer todo lo que ocurre en el servicio) se utilizar
 
 No será necesario utilizar ninguna base de datos, pues en principio el objetivo de este servicio no es almacenar ninguna imagen o información.
 
+Para la integración continua se a utilizado [Travis-CI](https://travis-ci.org/) y [Shippable](https://app.shippable.com/)
