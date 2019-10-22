@@ -15,6 +15,13 @@ El objetivo del servicio es aportar una solución rápida al usuario a la hora d
 
 Para la realización de los test se ha utilizado la biblioteca (en java) [junit4](https://junit.org/junit4/).
 
+Se han escrito 2 test que comprueban funciones básicas para el proyecto, en concreto se comprueba que se cargan las imagenes y leen valores como la extensión correctamente. En otro test se comprueba una función de compresión básica, para esta compresión se ha utilizado la clase de java ImageWriter.
+Para más información:
+[Test](https://github.com/jesusrpII/Proyecto-IV/blob/master/imageCo/src/test/java/imageCTest.java)
+[Clase principal y funciones básicas](https://github.com/jesusrpII/Proyecto-IV/blob/master/imageCo/src/main/java/imageC.java)
+
+
+
 Se ha enlazado el repositorio con Travis-Ci y creado el archivo .travis.yml con el contenido necesario para realizar los test.
 
 ```yaml
