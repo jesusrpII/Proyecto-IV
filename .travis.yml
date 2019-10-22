@@ -2,8 +2,7 @@ language: java   #Especificamos lenguaje
 jdk:             # Y version de jdk
   -oraclejdk11
   
-script:              # Indicamos la carpeta donde se situa el pom.xml 
-			#y la compilacion y ejecución de los test con maven
+script:    # Indicamos la carpeta donde se situa el pom.xml y la compilacion y ejecución de los test con maven
   - cd imageCo
   - mvn clean install
 
