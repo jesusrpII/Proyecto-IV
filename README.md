@@ -49,6 +49,9 @@ Para los pasos siguientes será necesario tener instalado maven (sudo apt-get in
 
 Se debera clonar o descargar el repositorio, una vez hecho eso nos situamos en la carpeta imageCo (cd imageCo) y ejecutamos mvn clean install. Inmediatamente se compilará el proyecto y ejecutaran los test.
 
+### Herramienta de construcción
+[Herramienta de construcción: Maven](https://github.com/jesusrpII/Proyecto-IV/tree/master/doc/buildtool.md)
+
 
 ### Información adicional
 
