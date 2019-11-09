@@ -1,0 +1,26 @@
+### API
+
+La API desarrollada utiliza como base las funciones de la clase [imageC.java](https://github.com/jesusrpII/Proyecto-IV/blob/master/imageCo/src/main/java/servicio/imageC.java), como ya se ha indicado se inicia con mvn spring-boot:start y se puede acceder a traves de localhost:8080.
+A traves de las siguientes rutas se pueden acceder a:
+
+- "/" : Formulario para subir una imágen jpg para su compresión
+- "/status": Devuelve el objeto JSON { "status" : "ok" }
+
+Mediante post:
+
+- "/comprimido": Descarga de imagen comprimida obtenida a partir de la imagen pasada por POST.
+
+
+El funcionamiento es simple, en "/" subimos una imagen y una vez procesada nos devuelve un archivo a descargar.
+
+Para información sobre la implementación de estas rutas: [controladores](https://github.com/jesusrpII/Proyecto-IV/tree/master/imageCo/src/main/java/JRP/spring/controller)
+
+### Configuración
+
+Para subir y descargar archivos en springboot es necesario crear unas clases de configuración, otro factor a tener en cuenta es que spring boot trabajo con MultipartFile y vamos a tener que convertirlo a File para trabajar con las imagenes (esto se ha solucionado en [imageC.java](https://github.com/jesusrpII/Proyecto-IV/blob/master/imageCo/src/main/java/servicio/imageC.java)).
+
+[Ver las clases de configuración](https://github.com/jesusrpII/Proyecto-IV/tree/master/imageCo/src/main/java/JRP/spring/storage)
+
+Para más información la siguiente página puede resultar muy util: [Spring.io](https://spring.io/guides/gs/uploading-files/)
+
+

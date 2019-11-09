@@ -11,56 +11,27 @@ El servicio va a tratar de recibir unas imagenes y dado un factor de compresión
 El objetivo del servicio es aportar una solución rápida al usuario a la hora de ahorrar espacio en el almacenamiento de imagenes.
 
 
-## Integración continua
-
-Para la realización de los test se ha utilizado la biblioteca (en java) [junit4](https://junit.org/junit4/).
-
-Se han escrito 2 test que comprueban funciones básicas para el proyecto, en concreto se comprueba que se cargan las imagenes y leen valores como la extensión correctamente. En otro test se comprueba una función de compresión básica, para esta compresión se ha utilizado la clase de java ImageWriter.
-Para más información:
-[Test](https://github.com/jesusrpII/Proyecto-IV/blob/master/imageCo/src/test/java/imageCTest.java)
-[Clase principal y funciones básicas](https://github.com/jesusrpII/Proyecto-IV/blob/master/imageCo/src/main/java/imageC.java)
-
-
-
-Se ha enlazado el repositorio con Travis-Ci y creado el archivo .travis.yml con el contenido necesario para realizar los test.
-
-```yaml
-
-language: java   #Especificamos lenguaje
-jdk:             # Y version de jdk
-  -oraclejdk11
-  
-script:              # Indicamos la carpeta donde se situa el pom.xml y la compilacion y ejecución de los test con maven
-  - cd imageCo
-  - mvn clean install
-
-```
-
-Adicionalmente se ha enlazado el repositorio con shippable y creado el archivo shippable.yml (es muy parecido al de travis):
-
-```yaml
-language: java   #Especificamos lenguaje
-jdk:             # Y version de jdk
-  - oraclejdk11
-  
-build:     # Indicamos la carpeta donde se situa el pom.xml y la compilacion y ejecución de los test con maven
-  ci:
-     - cd imageCo
-     - mvn clean install
-```
-
-
-### Clonar repositorio y probar los test
+### Clonar repositorio y ejecutar la aplicación spring boot
 
 Para los pasos siguientes será necesario tener instalado maven (sudo apt-get install maven).
 
 Se debera clonar o descargar el repositorio, una vez hecho eso nos situamos en la carpeta imageCo (cd imageCo) y ejecutamos mvn clean install. Inmediatamente se compilará el proyecto y ejecutaran los test.
 
-### Herramienta de construcción
-[Herramienta de construcción: Maven](https://github.com/jesusrpII/Proyecto-IV/tree/master/doc/buildtool.md)
+Para ejecutar la aplicación bastará con ejecutar mvn spring-boot:start y para pararlo mvn spring-boot:stop
 
+Para más información:
+
+[Herramienta de construcción: Maven](https://github.com/jesusrpII/Proyecto-IV/tree/master/doc/buildtool.md)  (Actualizado hito 3)
+
+buildtool: pom.xml
+
+### API
+
+[Que hace hasta el momento la API] (https://github.com/jesusrpII/Proyecto-IV/tree/master/doc/api.md)
+[Test] (https://github.com/jesusrpII/Proyecto-IV/tree/master/doc/test.md)
 
 ### Información adicional
 
 [Herramientas a utilizar](https://github.com/jesusrpII/Proyecto-IV/tree/master/doc/herramientas.md)
+[Integración](https://github.com/jesusrpII/Proyecto-IV/tree/master/doc/integracion.md)
 

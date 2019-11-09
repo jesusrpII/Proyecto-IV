@@ -9,39 +9,32 @@ En mi caso para esta fase del proyecto he utilizado el IDE Netbeans con lo cual 
 
 Toda la información necesaria para construir el proyecto se encuentra en el archivo pom.xml que ya se ha comentado anteriormente (se ha generado automáticamente) contiene todas las dependencias, así como otra información como puede ser el groupID o artifactId entre otras:
 
+
+### Spring boot
+
+A la hora de crear el proyecto Spring Boot en mi caso he utilizado el IDE Netbeans, únicamente he tenido que instalar un plugin (spring-boot) y las dependencias se han añadido automáticamente en [pom.xml](https://github.com/jesusrpII/Proyecto-IV/tree/master/imageCo/pom.xml).
+Sin embargo, si he tenido que modificar algunas dependencias ya que no funcionaba bien del todo, por ejemplo para arrancar el proyecto springboot no contemplaba poder pararlo (con stop) para ello se ha añadido lo siguiente (algo muy simple, pero si no te das cuenta puedes pasarte mucho tiempo sin saber por que no funciona):
+
 ```yaml
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>JRP</groupId>
-    <artifactId>proyectoIV</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
-    <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>test</scope>
-            <type>jar</type>
-        </dependency>
-        <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>2.5</version>
-            <type>jar</type>
-        </dependency>
-    </dependencies>
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-    </properties>
-</project>
+<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <addResources>true</addResources>
+                    <fork>true</fork>
+                </configuration>
+			</plugin>
+		</plugins>
+	</build>
 ```
 
+Para construir y ejecutar los test: mvn clean install
+Para ejecutar los test únicamente: mvn test
+Para arranca la aplicación spring boot: mvn spring-boot:start
+Para parar spring-boot: mvn spring-boot: stop
 
-Una vez tenemos nuestro proyecto implementado y el pom.xml anterior basta con ejecutar "mvn clean install" (por supuesto, situados en el directorio que contiene nuestro proyecto) y se compilara  el proyecto y ejecutaran los test.
 
-Con "mvn test" se ejecutarán los test.
+
 
