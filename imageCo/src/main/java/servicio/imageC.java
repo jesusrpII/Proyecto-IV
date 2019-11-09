@@ -1,6 +1,9 @@
+package servicio;
+
 
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,6 +19,7 @@ import javax.imageio.ImageWriteParam;
 import javax.imageio.ImageWriter;
 import javax.imageio.stream.ImageOutputStream;
 import org.apache.commons.io.FilenameUtils;
+import org.springframework.web.multipart.MultipartFile;
 
 
 /**
@@ -26,10 +30,11 @@ public class imageC {
     ;
     private File imagenIni;
     private File imagenCom;
+    private String path = "./src/main/resources/static/";
 
     
     public imageC(){
-        imagenIni = new File("./imagenes/imagen.jpg");
+        imagenIni = new File("./src/main/resources/static/imagen.jpg");
     }
     
     
@@ -39,6 +44,7 @@ public class imageC {
          try{      
             URLConnection con = new URL(url).openConnection();
             
+            con.getContentType();
             InputStream in = con.getInputStream();
             OutputStream out = new FileOutputStream(imagenIni);
             
@@ -55,15 +61,29 @@ public class imageC {
             ex.printStackTrace();
         }  
     }
+
     
+    public void setImagenIni(MultipartFile imagen ){      
+        try {
+            imagenIni.createNewFile();
+            FileOutputStream fos = new FileOutputStream(imagenIni);
+            fos.write(imagen.getBytes());
+            fos.close();
+           
+            
+            } catch (IOException ioe){
+            }
+        
+    }
     
+  
     // Compresión simple utilizando la clase ImageWriter de java
     
     public void compresionSimple(float factor){
         try {
             BufferedImage img = ImageIO.read(imagenIni);
        
-            imagenCom = new File("./imagenes/compressed_image.jpg");
+            imagenCom = new File("./src/main/resources/static/compressed_image.jpg");
             OutputStream out = new FileOutputStream(imagenCom);                    // Se crear un stream de salida
 
             Iterator<ImageWriter> writers = ImageIO.getImageWritersByFormatName(this.getExtension());  // Para la compresion es necesario conocer la extension (jpg,png..)
