@@ -1,6 +1,6 @@
 ## Integración continua (actualizada)
 
-Para información acerca de los tests que se ejecutan: [Test] (https://github.com/jesusrpII/Proyecto-IV/tree/master/doc/test.md)
+Para información acerca de los tests que se ejecutan: [Test](https://github.com/jesusrpII/Proyecto-IV/tree/master/doc/test.md)
 
 
 Se ha enlazado el repositorio con Travis-Ci y creado el archivo .travis.yml con el contenido necesario para realizar los tests.
