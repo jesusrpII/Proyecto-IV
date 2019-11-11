@@ -3,6 +3,10 @@ jdk:             # Y version de jdk
   - oraclejdk11
   
 build:     # Indicamos la carpeta donde se situa el pom.xml y la compilacion y ejecución de los test con maven
-  ci:
+
+  pre_ci:
      - cd imageCo
-     - mvn clean install
+     - mvn clean
+  ci:
+     - mvn compile
+     - mvn test      # Se ejecutan los test
