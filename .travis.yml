@@ -4,10 +4,10 @@ jdk:             # Y version de jdk
   
 
 before_script:
+  - cd imageCo
   - mvn clean
 
 script:    # Indicamos la carpeta donde se situa el pom.xml y la compilacion y ejecución de los test con maven
-  - cd imageCo
   - mvn compile       
   - mvn test                #Se ejecutan los tests
   - mvn spring-boot:run     #Arrancamos spring boot
