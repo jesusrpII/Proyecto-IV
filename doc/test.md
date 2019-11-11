@@ -1,8 +1,8 @@
 ### Test
 
-Para la implementación y ejecución de los test se ha utilizado una biblioteca de Spring Boot, llamada Spring Boot Starter Test que utiliza [junit4](https://junit.org/junit4/).
+Para la implementación y ejecución de los tests se ha utilizado una biblioteca de Spring Boot, llamada Spring Boot Starter Test que utiliza [junit4](https://junit.org/junit4/).
 
-Se han añadido los test que se utilizaron en el hito anterior, que comprueban simplemente que las funciones basicas funcionan correctamente:
+Se han añadido los tests que se utilizaron en el hito anterior, que comprueban simplemente que las funciones básicas funcionan correctamente:
 
 ```yaml
 
@@ -35,7 +35,7 @@ Se han añadido los test que se utilizaron en el hito anterior, que comprueban s
 
 Y para comprobar el funcionamiento correcto de la API, he utilizado la biblioteca mockmvc que permite simular el comportamiento de un cliente, creando peticiones http con los métodos que se le indiquen (get,post..)
 
-En la primera función simplemente comprueba que se levanta el proyecto correctamente (/status devuelve el JSON correspondiente) y la segunda función comprueba que se pueden subir imagenes en la aplicacion (para ello realiza una petición POST con una imagen creada como ejemplo)
+En la primera función simplemente comprueba que se levanta el proyecto correctamente (/status devuelve el JSON correspondiente) y la segunda función comprueba que se pueden subir imagenes en la aplicación (para ello realiza una petición POST con una imagen creada como ejemplo)
 
 ```yaml
 / Comprueba mediante un get que /status devuelve el JSON correspondiente

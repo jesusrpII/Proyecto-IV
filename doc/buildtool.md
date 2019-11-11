@@ -1,9 +1,9 @@
 ### Herramienta de construcción
 
-Como herramienta de construcción se a utilizado [Maven](https://maven.apache.org/). 
+Como herramienta de construcción se ha utilizado [Maven](https://maven.apache.org/). 
 Maven es una herramienta de construcción open source que se encarga de compilar y generar los ejecutables de nuestro proyecto. 
-Se ha elegido ya que es una herramienta facil de instalar y utilizar. 
-"apt-get install maven" (para instalar) y "mvn archetype:generate" (que puede ir junto a otros parametros para generar la estructura de nuestro proyecto)
+Se ha elegido ya que es una herramienta fácil de instalar y utilizar. 
+"apt-get install maven" (para instalar) y "mvn archetype:generate" (que puede ir junto a otros parámetros para generar la estructura de nuestro proyecto)
 
 En mi caso para esta fase del proyecto he utilizado el IDE Netbeans con lo cual el proceso ha sido incluso más sencillo, de hecho el fichero de dependencias pom.xml se genera solo y se actualiza al añadir nuevas librerías (por ejemplo al añadir junit), de no hacerlo se deberían añadir las dependencias manualmente.
 
@@ -30,10 +30,10 @@ Sin embargo, si he tenido que modificar algunas dependencias ya que no funcionab
 	</build>
 ```
 
-Para construir y ejecutar los test: mvn clean install
-Para ejecutar los test únicamente: mvn test
+Para construir y ejecutar los tests: mvn clean install
+Para ejecutar los tests únicamente: mvn test
 Para arranca la aplicación spring boot: mvn spring-boot:start
-Para parar spring-boot: mvn spring-boot: stop
+Para parar spring boot: mvn spring-boot: stop
 
 
 

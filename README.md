@@ -15,7 +15,7 @@ El objetivo del servicio es aportar una solución rápida al usuario a la hora d
 
 Para los pasos siguientes será necesario tener instalado maven (sudo apt-get install maven).
 
-Se debera clonar o descargar el repositorio, una vez hecho eso nos situamos en la carpeta imageCo (cd imageCo) y ejecutamos mvn clean install. Inmediatamente se compilará el proyecto y ejecutaran los test.
+Se debera clonar o descargar el repositorio, una vez hecho eso nos situamos en la carpeta imageCo (cd imageCo) y ejecutamos mvn clean install. Inmediatamente se compilará el proyecto y ejecutaran los tests.
 
 Para ejecutar la aplicación bastará con ejecutar mvn spring-boot:start y para pararlo mvn spring-boot:stop
 
@@ -33,5 +33,5 @@ buildtool: pom.xml
 ### Información adicional
 
 [Herramientas a utilizar](https://github.com/jesusrpII/Proyecto-IV/tree/master/doc/herramientas.md)
-[Integración](https://github.com/jesusrpII/Proyecto-IV/tree/master/doc/integracion.md)
+[Integración Continua](https://github.com/jesusrpII/Proyecto-IV/blob/master/doc/integracion_continua.md)
 

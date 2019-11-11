@@ -1,6 +1,6 @@
 ## Integración continua (hito2)
 
-Para la realización de los test se ha utilizado la biblioteca (en java) [junit4](https://junit.org/junit4/).
+Para la realización de los tests se ha utilizado la biblioteca (en java) [junit4](https://junit.org/junit4/).
 
 Se han escrito 2 test que comprueban funciones básicas para el proyecto, en concreto se comprueba que se cargan las imagenes y leen valores como la extensión correctamente. En otro test se comprueba una función de compresión básica, para esta compresión se ha utilizado la clase de java ImageWriter.
 
