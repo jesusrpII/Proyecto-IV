@@ -33,10 +33,9 @@ jdk:             # Y version de jdk
   
 build:     # Indicamos la carpeta donde se situa el pom.xml y la compilacion y ejecución de los test con maven
 
-  pre_ci:
+  ci:
      - cd imageCo
      - mvn clean
-  ci:
      - mvn compile
      - mvn test      # Se ejecutan los test
 ```
