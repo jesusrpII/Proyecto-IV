@@ -2,7 +2,14 @@ language: java   #Especificamos lenguaje
 jdk:             # Y version de jdk
   -oraclejdk11
   
+
+before_script:
+  - mvn clean
+
 script:    # Indicamos la carpeta donde se situa el pom.xml y la compilacion y ejecución de los test con maven
   - cd imageCo
-  - mvn clean install
+  - mvn compile       
+  - mvn test                #Se ejecutan los tests
+  - mvn spring-boot:run     #Arrancamos spring boot
+  - mvn spring-boot:stop    #Paramos spring boot
 
