@@ -27,8 +27,8 @@ buildtool: pom.xml
 
 ### API
 
-[Que hace hasta el momento la API] (https://github.com/jesusrpII/Proyecto-IV/tree/master/doc/api.md)
-[Test] (https://github.com/jesusrpII/Proyecto-IV/tree/master/doc/test.md)
+[Información sobre la API](https://github.com/jesusrpII/Proyecto-IV/tree/master/doc/api.md)
+[Test](https://github.com/jesusrpII/Proyecto-IV/tree/master/doc/test.md)
 
 ### Información adicional
 
