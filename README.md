@@ -27,13 +27,14 @@ buildtool: pom.xml
 
 ### API
 
-[Información sobre la API](https://github.com/jesusrpII/Proyecto-IV/tree/master/doc/api.md)
+- [Información sobre la API](https://github.com/jesusrpII/Proyecto-IV/tree/master/doc/api.md)
 
-[Test](https://github.com/jesusrpII/Proyecto-IV/tree/master/doc/test.md)
+- [Test](https://github.com/jesusrpII/Proyecto-IV/tree/master/doc/test.md)
 
 ### Información adicional
 
-[Herramientas a utilizar](https://github.com/jesusrpII/Proyecto-IV/tree/master/doc/herramientas.md)
+- [Herramientas a utilizar](https://github.com/jesusrpII/Proyecto-IV/tree/master/doc/herramientas.md)
 
-[Integración Continua](https://github.com/jesusrpII/Proyecto-IV/blob/master/doc/integracion_continua.md)
+- [Integración Continua](https://github.com/jesusrpII/Proyecto-IV/blob/master/doc/integracion_continua.md)
+
 

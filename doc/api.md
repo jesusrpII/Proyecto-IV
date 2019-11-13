@@ -1,17 +1,17 @@
 ### API
 
-La API desarrollada utiliza como base las funciones de la clase [imageC.java](https://github.com/jesusrpII/Proyecto-IV/blob/master/imageCo/src/main/java/servicio/imageC.java), como ya se ha indicado se inicia con mvn spring-boot:start y se puede acceder a partir de localhost:8080.
-A través de las siguientes rutas se pueden acceder a:
+La API desarrollada utiliza como base las funciones de la clase [imageC.java](https://github.com/jesusrpII/Proyecto-IV/blob/master/imageCo/src/main/java/servicio/imageC.java), como ya se ha indicado se inicia con mvn spring-boot:start y se puede acceder a partir de **localhost:8080**.
 
-- "/" : Formulario para subir una imagen jpg para su compresión
-- "/status": Devuelve el objeto JSON { "status" : "ok" }
+**HTTP Request de la API:**
 
-Mediante post:
+|METHOD|URI|RESPONSE|
+|------------------|---------|----------|
+| GET | /  | Formulario html  (para subir una imagen)|
+| GET | /status |  JSON {"status":"OK"} |
+| POST | /comprimido | Devuelve multipart file (la imagen que se pasa en el header del request pero después de ser comprimida) |
 
-- "/comprimido": Descarga de imagen comprimida obtenida a partir de la imagen pasada por POST.
+En resumen, en "/" accedemos a un formulario html que nos permite subir una imagen, el formulario ejecuta /comprido mediante POST con la imagen en el header del post request, esta imagen (que es de tipo multipart file) es procesada y comprimida, como respuesta obtenemos dicha imagen comprimida lista para descargar.
 
-
-El funcionamiento es simple, en "/" subimos una imagen y una vez procesada nos devuelve un archivo a descargar.
 
 Para información sobre la implementación de estas rutas: [controladores](https://github.com/jesusrpII/Proyecto-IV/tree/master/imageCo/src/main/java/JRP/spring/controller)
 
