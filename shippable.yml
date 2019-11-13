@@ -9,5 +9,4 @@ build:     # Indicamos la carpeta donde se situa el pom.xml y la compilacion y e
      - mvn clean
      - mvn compile
      - mvn test      # Se ejecutan los test
-     - mvn spring-boot:run    # Inicio de servicio
-     - mvn spring-boot:stop   # Parada servicio
+
