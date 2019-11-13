@@ -21,7 +21,7 @@ Para ejecutar la aplicación bastará con ejecutar mvn spring-boot:start y para 
 
 Para más información:
 
-[Herramienta de construcción: Maven](https://github.com/jesusrpII/Proyecto-IV/tree/master/doc/buildtool.md)  (Actualizado hito 3)
+[Herramienta de construcción: Maven](https://github.com/jesusrpII/Proyecto-IV/tree/master/doc/buildtool.md)  (Actualizado)
 
 buildtool: pom.xml
 
