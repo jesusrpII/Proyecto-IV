@@ -10,5 +10,9 @@ before_script:
 script:    # Indicamos la carpeta donde se situa el pom.xml y la compilacion y ejecución de los test con maven
   - mvn compile       
   - mvn test                #Se ejecutan los tests
+  - mvn spring-boot:run
+  
+ after script:
+  - mvn spring-boot:stop
 
 
