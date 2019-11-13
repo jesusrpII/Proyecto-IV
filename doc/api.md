@@ -10,7 +10,7 @@ La API desarrollada utiliza como base las funciones de la clase [imageC.java](ht
 | GET | /status |  JSON {"status":"OK"} |
 | POST | /comprimido | Devuelve multipart file (la imagen que se pasa en el header del request pero después de ser comprimida) |
 
-En resumen, en "/" accedemos a un formulario html que nos permite subir una imagen, el formulario ejecuta /comprido mediante POST con la imagen en el header del post request, esta imagen (que es de tipo multipart file) es procesada y comprimida, como respuesta obtenemos dicha imagen comprimida lista para descargar.
+En resumen, utilizando "/" accedemos a un formulario html que nos permite subir una imagen, el formulario ejecuta "/comprido" mediante POST (con la imagen en el header del post request), esta imagen (que es de tipo multipart file) es procesada y comprimida, como respuesta obtenemos dicha imagen comprimida lista para descargar.
 
 
 Para información sobre la implementación de estas rutas: [controladores](https://github.com/jesusrpII/Proyecto-IV/tree/master/imageCo/src/main/java/JRP/spring/controller)
