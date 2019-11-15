@@ -1,5 +1,5 @@
 Pull request para el ejercicio 1 adicional.
-Autor: David Luque Callejas
+Autor: David Luque (https://github.com/davidluque1)
 
 
 ## Test de cobertura
