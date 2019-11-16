@@ -7,7 +7,7 @@ Autor: [David Luque](https://github.com/davidluque1)
 La idea es ejecutar un test que compruebe qué cantidad de código de las clases se comprueba al ejecutar los tests. Se va a usar [jacoco](https://www.jacoco.org/jacoco/trunk/index.html) para comprobar el porcentaje de cobertura del compañero. Para instalarlo, se añade el siguiente código al archivo pom.xml:
 
 ~~~~
-<plugin>
+			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
 				<version>0.8.2</version>
