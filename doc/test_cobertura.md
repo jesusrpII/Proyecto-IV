@@ -31,7 +31,7 @@ La idea es ejecutar un test que compruebe qué cantidad de código de las clases
 
 Al hacer los tests con Maven, la aplicación se encarga automáticamente de realizar el recuento de la cobertura. Yéndonos a la carpeta imageCo/target/site/jacoco/index.html podemos ver una página web con el resultado obtenido. En mi caso, el compañero ya ha testeado todo el código que se ejecutaría en el curso normal de la aplicación, pero no hay ningún código que testee excepciones. Para ello, he añadido las siguientes líneas de código, las cuales provocan una excepción:
 
-´´´
+```
 //test que comprueba que se produce una excepción en ExcepcionCargarImagen
     @Test
     public void ExcepcionCargarImagenURL(){
@@ -41,7 +41,7 @@ Al hacer los tests con Maven, la aplicación se encarga automáticamente de real
         o.cargarImagenURL(url);
         
     }
-´´´
+```
 
 Antes de añadir estas líneas, la cobertura era:
 
