@@ -25,16 +25,23 @@ Para más información:
 
 buildtool: pom.xml
 
-### API
+### Despliegue en heroku
 
-- [Información sobre la API](https://github.com/jesusrpII/Proyecto-IV/tree/master/doc/api.md)
+Despliegue: https://git.heroku.com/imageco.git
 
-- [Test](https://github.com/jesusrpII/Proyecto-IV/tree/master/doc/test.md)
+[Cómo se ha desplegado el proyecto en heroku]((https://github.com/jesusrpII/Proyecto-IV/tree/master/doc/despliegue.md))
+
 
 ### Información adicional
 
 - [Herramientas a utilizar](https://github.com/jesusrpII/Proyecto-IV/tree/master/doc/herramientas.md)
 
 - [Integración Continua](https://github.com/jesusrpII/Proyecto-IV/blob/master/doc/integracion_continua.md)
+
+### API
+
+- [Información sobre la API](https://github.com/jesusrpII/Proyecto-IV/tree/master/doc/api.md)
+
+- [Test](https://github.com/jesusrpII/Proyecto-IV/tree/master/doc/test.md)
 
 
