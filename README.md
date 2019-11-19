@@ -27,9 +27,9 @@ buildtool: pom.xml
 
 ### Despliegue en heroku
 
-Despliegue: https://git.heroku.com/imageco.git
+Despliegue: https://imageco.herokuapp.com/t
 
-[Cómo se ha desplegado el proyecto en heroku]((https://github.com/jesusrpII/Proyecto-IV/tree/master/doc/despliegue.md))
+- [Cómo se ha desplegado el proyecto en heroku]((https://github.com/jesusrpII/Proyecto-IV/tree/master/doc/despliegue.md))
 
 
 ### Información adicional
