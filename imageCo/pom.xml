@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>JRP</groupId>
-	<artifactId>demo</artifactId>
+	<artifactId>imageCo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Spring PIV</name>
 	<description>Proyecto IV utilizando SpringBoot</description>
