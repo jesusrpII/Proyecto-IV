@@ -1,25 +1,25 @@
 ## Despliegue en Heroku
 
-Para esta fase del proyecto, se a elegido como PaaS [Heroku](https://www.heroku.com/) debido a que es totalmente gratis y sencillo de utilizar.
+Para esta fase del proyecto, se ha elegido como PaaS [Heroku](https://www.heroku.com/) debido a que es totalmente gratis y sencillo de utilizar.
 
 Los pasos necesarios para desplegar el proyecto en Heroku son:
 
-- Crear cuenta en Heroku (registrarse desde su página es muy sencillo)
+- Crear cuenta en [Heroku](https://www.heroku.com/) (registrarse desde su página es muy sencillo)
 
 - Instalar el CLI de Heroku en nuestro sistema, yo he utilizado el gestor de paquetes snap: "sudo snap install heroku --classic"
 
-- Una vez instalado, nos logueamos, de esta forma vinculamos nuestra cuenta con la sesión: "heroku login" (Nos aparecera una ventana en el buscador para que introduzcamos nuestras credenciales).
+- Una vez instalado, hacemos login , de esta forma vinculamos nuestra cuenta con la sesión: "heroku login" (Nos aparecera una ventana en el buscador para que introduzcamos nuestras credenciales).
 
 - Estando en el directorio raíz de nuestro proyecto, creamos nuestra aplicación heroku mediante: "heroku create imageco" (imageco será el nombre de nuestra app).
 Esto lo que hace es crear la aplicación y crear un repositorio remoto heroku en nuestro repositorio local.
 
-- Ya solo queda desplegar nuestro proyecto (notese que no se ha tenido que indicar ningún buildpack para el lenguaje de nuestro proyecto ya que heroku lo detecta automáticamente, si no deberíamos indicarlo mediante: "heroku buildpacks:set heroku/java").
+- Ya solo queda desplegar nuestro proyecto (nótese que no se ha tenido que indicar ningún buildpack para el lenguaje de nuestro proyecto ya que heroku lo detecta automáticamente, si no deberíamos indicarlo mediante: "heroku buildpacks:set heroku/java").
    
     A la hora de desplegar el proyecto bastaría con "git push heroku master", pero hay que tener en cuenta (o por lo menos en mi        caso) que el directorio del proyecto no se encuentra en la raíz por lo que no encontrará nada que "construir" y dará error.
 
     Para hacer push del directorio donde se encuentra el código que queremos desplegar debemos añadir lo siguiente: "git subtree push --prefix imageCo heroku master"
 
-    Una vez hecho esto, el proyecto se despliega correctamente (heroku detecta el pom.xml y detecta que se trata de un proyecto escrito en java). [enlace](https://git.heroku.com/imageco.git)
+    Una vez hecho esto, el proyecto se despliega correctamente (heroku detecta el pom.xml y detecta que se trata de un proyecto escrito en java). 
 
 - Adicionalmente, se puede hacer que heroku detecte automáticamente los cambios en nuestro repositorio de GitHub (de lo contrario deberiamos hacer un push a heroku para que detectase los cambios). Esto lo podemos realizar desde la web:
     - Enlazamos nuestro repositorio en gitHub con heroku.
@@ -44,6 +44,8 @@ Con "web" indicamos que se ejecuta un proyecto web, escrito en java con el puert
 
 #### Bibliografía
 [Heroku, cómo desplegar un proyecto Spring-Boot](https://devcenter.heroku.com/articles/deploying-spring-boot-apps-to-heroku)
+
 [Heroku, Procfile](https://devcenter.heroku.com/articles/procfile)
+
 [Cómo desplegar un proyecto que no se encuentra en el directorio raíz](https://coderwall.com/p/ssxp5q/heroku-deployment-without-the-app-being-at-the-repo-root-in-a-subfolder)
  
