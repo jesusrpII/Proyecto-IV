@@ -77,5 +77,17 @@ class SpringPivApplicationTests {
         assertTrue(o.getImagenCom().length()< o.getImagenIni().length()); // Si la compresión se ejecuta bien, el tamaño de la imagen resultante debe ser menor
     }
 
+     
+    //test que comprueba que se produce una excepción en ExcepcionCargarImagen
+    @Test
+    public void ExcepcionCargarImagenURL(){
+        System.out.println("Cargar imagen de prueba");
+        String url = "httpds://image.freepik.com/foto-gratis/camino-rural-tematico-otono-concepto-cordillera_53876-23187.jpg";
+        imageC o = new imageC();
+        o.cargarImagenURL(url);
+        
+    }
+
+
 
 }
