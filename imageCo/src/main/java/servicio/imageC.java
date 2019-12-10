@@ -34,7 +34,7 @@ public class imageC {
 
     
     public imageC(){
-        imagenIni = new File("./src/main/resources/static/imagen.jpg");
+        
     }
     
     
@@ -63,8 +63,16 @@ public class imageC {
     }
 
     
-    public void setImagenIni(MultipartFile imagen ){      
+    public void setImagenIni(MultipartFile imagen ) throws Exception{      
         try {
+            String file_path= path+"imagen.jpg";         // Por defecto la imagen es jpg
+           
+            switch(imagen.getContentType()){
+                case "image/png":  throw new Exception("PNG compression not implemented");//file_path= path+"imagen.png";
+            }
+            
+            imagenIni = new File(file_path);
+            System.out.print(imagen.getContentType());
             imagenIni.createNewFile();
             FileOutputStream fos = new FileOutputStream(imagenIni);
             fos.write(imagen.getBytes());
@@ -82,7 +90,8 @@ public class imageC {
     public void compresionSimple(float factor){
         try {
             BufferedImage img = ImageIO.read(imagenIni);
-       
+            
+            
             imagenCom = new File("./src/main/resources/static/compressed_image.jpg");
             OutputStream out = new FileOutputStream(imagenCom);                    // Se crear un stream de salida
 

@@ -2,6 +2,8 @@ package JRP.spring.controller;
 
 import JRP.spring.storage.StorageService;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
@@ -36,17 +38,26 @@ public class imageController {
 
     @PostMapping("/comprimido")
     @ResponseBody
-    public ResponseEntity<Resource> handleFileUpload(@RequestParam("file") MultipartFile file,
-            RedirectAttributes redirectAttributes) {
+    public ResponseEntity<Resource> handleFileUpload(@RequestParam("file") MultipartFile file,@RequestParam("factor") float factor,
+            RedirectAttributes redirectAttributes) throws Exception {
 
-        storageService.store(file);
-        imageC o = new imageC();
-        o.setImagenIni(file);
-        o.compresionSimple(0.5f);       
-        Resource comprimida = storageService.loadAsResource(o.getImagenCom().getName());
-        
-        return ResponseEntity.ok().header(HttpHeaders.CONTENT_DISPOSITION,
-                "attachment; filename=\"" + comprimida.getFilename() + "\"").body(comprimida);
+        if ("image/png".equals(file.getContentType())){
+            throw new Exception("PNG compression not implemented");
+        }
+        else {
+            //storageService.store(file);        // No nos interesa guardar ninguna imagen
+            imageC o = new imageC();
+            try {
+                o.setImagenIni(file);
+            } catch (Exception ex) {
+                Logger.getLogger(imageController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            o.compresionSimple(factor);       
+            Resource comprimida = storageService.loadAsResource(o.getImagenCom().getName());
+
+            return ResponseEntity.ok().header(HttpHeaders.CONTENT_DISPOSITION,
+                    "attachment; filename=\"" + comprimida.getFilename() + "\"").body(comprimida);
+        }
     }
 
     /* Descomentar si se quiere acceder a algun archivo en concreto (como solo existe una unica imagen)
