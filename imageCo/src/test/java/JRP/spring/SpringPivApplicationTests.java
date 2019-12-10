@@ -48,7 +48,7 @@ class SpringPivApplicationTests {
         FileInputStream fis = new FileInputStream(o.getImagenIni());
         MockMultipartFile multipartFile = new MockMultipartFile("file", "imagen.jpg",
                 "image/jpeg", fis);
-        this.mockMvc.perform(MockMvcRequestBuilders.fileUpload("/comprimido").file(multipartFile))
+        this.mockMvc.perform(MockMvcRequestBuilders.fileUpload("/comprimido").file(multipartFile).param("factor", "0.5"))
                 .andExpect(status().isOk());
     }
         

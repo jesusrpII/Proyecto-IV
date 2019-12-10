@@ -34,7 +34,7 @@ public class imageC {
 
     
     public imageC(){
-        
+        imagenIni = new File(path+"imagen.jpg");
     }
     
     
