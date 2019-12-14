@@ -10,6 +10,7 @@ COPY imageCo/src /imageCo/src
 COPY imageCo/pom.xml /imageCo
 WORKDIR imageCo
 ENV PORT = 8080
+EXPOSE 8080
 CMD mvn spring-boot:run
 ```
 
@@ -18,6 +19,7 @@ Este Dockerfile realiza (desde arriba hacia abajo):
 - "COPY imageCo/src /imageCo/src COPY imageCo/pom.xml /imageCo"- Copiamos lo necesario para construir el proyecto, la carpeta src (que contiene todas las clases) en imageCo/src y el pom.xml que es necesario para construir el proyecto (contiene todas las ordenes necesarias) en imageCo/.
 - "WORKDIR imageCo" - Indicamos que el directorio de trabajo es imageCo (es el que contiene el pom.xml y las clases dentro de imageCo/src).
 - "ENV PORT = 8080" - Línea necesaria para indicar el puerto que utilizará el servicio, en este caso 8080.
+- "EXPOSE 8080" - Esta línea es informativa, informa de que el puerto a usar es 8080
 - "CMD mvn spring-boot:run" - Orden que se ejecuta cuando se levanta el contenedor, en este caso es iniciar el servicio.
 
 
