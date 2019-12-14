@@ -31,7 +31,9 @@ Despliegue: https://imageco.herokuapp.com/
 
 - [Cómo se ha desplegado el proyecto en heroku](https://github.com/jesusrpII/Proyecto-IV/tree/master/doc/despliegue.md)
 
-### Contenedor con Docker y despliegue en azure
+### Contenedor con Docker, uso de DockerHub y despliegue en azure
+
+DockerHub: https://hub.docker.com/r/jesusrpii/proyectoiv
 
 Contenedor: https://proyectoivdocker.azurewebsites.net/
 
