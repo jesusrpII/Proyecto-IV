@@ -9,9 +9,17 @@ FROM maven:3.6-jdk-8 AS build
 COPY imageCo/src /imageCo/src
 COPY imageCo/pom.xml /imageCo
 WORKDIR imageCo
-EXPOSE 8080
+ENV PORT = 8080
 CMD mvn spring-boot:run
 ```
+
+Este Dockerfile realiza (desde arriba hacia abajo):
+"FROM maven:3.6-jdk-8 AS build" - Utiliza una imagen de maven (recordamos que nuestro proyecto es maven)
+"COPY imageCo/src /imageCo/src COPY imageCo/pom.xml /imageCo"- Copiamos lo necesario para construir el proyecto, la carpeta src (que contiene todas las clases) en imageCo/src y el pom.xml que es necesario para construir el proyecto (contiene todas las ordenes necesarias) en imageCo/.
+"WORKDIR imageCo" - Indicamos que el directorio de trabajo es imageCo (es el que contiene el pom.xml y las clases dentro de imageCo/src).
+"ENV PORT = 8080" - Línea necesaria para indicar el puerto que utilizará el servicio, en este caso 8080.
+"CMD mvn spring-boot:run" - Orden que se ejecuta cuando se levanta el contenedor, en este caso es iniciar el servicio.
+
 
 
 Una vez creado el archivo anterior (situado en la raíz de nuestro proyecto):
@@ -32,7 +40,9 @@ Para hacer uso de la imagen de nuestro proyecto desde DockerHub y que esta image
 ![Imagen1](https://github.com/jesusrpII/Proyecto-IV/blob/master/doc/images/dockerHub1.png)
 - Creamos un nuevo repositorio y lo enlazamos con nuestro repositorio de github.
 ![Imagen2](https://github.com/jesusrpII/Proyecto-IV/blob/master/doc/images/dockerHub2.png)
-
+- Para activar el despliegue automático activamos las opciones "Autobuild" y "Build caching", se puede realizar desde la opción de editar builds y nos aparecerá lo siguiente:
+![Imagen3](https://github.com/jesusrpII/Proyecto-IV/blob/master/doc/images/dockerHub3.png)
+    Tras activar las opciones, la imagen se actualizará cuando se haga un push a nuestro repositorio de github.
 
 
 ### Despliegue del contenedor en Azure
