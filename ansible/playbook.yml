@@ -1,0 +1,41 @@
+#configuracion para todos los host
+- hosts: all
+  become: yes
+
+# las tareas que se ejecutarán en las máquinas virtuales serán
+  tasks:
+
+  - name: actualizar apt
+    apt:
+      update_cache: yes
+      upgrade: yes
+
+  - name: instalar jdk8
+    apt: name=openjdk-8-jdk state=present
+    
+  - name: Instalación de Maven
+    apt: name=maven state=latest
+ 
+  - name: git installation
+    apt: name=git state=present
+
+  - name: clonar repositorio del proyecto
+    git:
+      repo: https://github.com/jesusrpII/Proyecto-IV.git
+      dest: ./Proyecto-IV/
+
+  - name: instalar proyecto
+    command: mvn clean install
+    # Es totalmente necesario indicar donde se encuentra el pom.xml
+    args: 
+      chdir: /home/vagrant/Proyecto-IV/imageCo
+
+  - name: iniciar api
+    command: mvn spring-boot:start
+    args: 
+      chdir: /home/vagrant/Proyecto-IV/imageCo
+
+
+
+    
+   
