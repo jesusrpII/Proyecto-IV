@@ -24,6 +24,10 @@ Resultados en Ubuntu 18.04:
 
 ![Imagen2](https://github.com/jesusrpII/Proyecto-IV/blob/master/doc/images/abub18.png)
 
+Los datos más relevantes son las solicitudes por segundo en el que como se puede observar en las imagenes ubuntu 16 es mejor con 2256 solicitudes/segundo frente a 2101 que ofrece ubuntu 18. Sin embargo, ubuntu 18 nos ofrece en el tiempo de respuesta más largo 118 ms frente a los 443 ms que ofrece ubuntu 16.
+
+Me ha costado decidirme pero a la vista de los resultados he elegido ubuntu 18.06 ya que además de lo anteriomente dicho es más actual.
+
 
 
 
@@ -39,8 +43,7 @@ Para la creación de una máquina virtual con Vagrant es necesario crear un arch
 Vagrant.configure("2") do |config|
 
   # Indica el sistema operativo (vagrant box) a usar
-  config.vm.box = "velocity42/xenial64" 
-  #config.vm.box = "xcoo/bionic64"
+  config.vm.box = "xcoo/bionic64"
 
   # Direccionamos el puerto 2222 de la máquina local con el puerto 22 de la máquina virtual, será utilizado para las conexiones ssh
   config.vm.network "forwarded_port", guest: 22, host:2222, id: "ssh", auto_correct: true
@@ -72,19 +75,20 @@ En vagrant es necesario un archivo llamado Invetory que le indique a vagrant en 
 Ansible será el encargado de provisionar nuestras máquinas virtuales, para ello necesitará conocer que necesitan nuestras máquinas esto es indicado mediante un archivo llamado "playbook", el playbook que utilizo es:
 
 ``` yaml
-#configuracion para todos los host
+ #configuracion para todos los host
 - hosts: all
   become: yes
 
-  # las tareas que se ejecutarán en las máquinas virtuales serán
+ # las tareas que se ejecutarán en las máquinas virtuales serán
   tasks:
+
   - name: actualizar apt
     apt:
       update_cache: yes
       upgrade: yes
 
-  #  - name: instalar jdk8
-   #  apt: name=openjdk-8-jdk state=present
+  - name: instalar jdk8
+    apt: name=openjdk-8-jdk state=present
     
   - name: Instalación de Maven
     apt: name=maven state=latest
@@ -94,20 +98,31 @@ Ansible será el encargado de provisionar nuestras máquinas virtuales, para ell
 
   - name: clonar repositorio del proyecto
     git:
-     command: git clone https://github.com/jesusrpII/Proyecto-IV.git
-     dest: ./ProyectoIV/
+      repo: https://github.com/jesusrpII/Proyecto-IV.git
+      dest: ./Proyecto-IV/
 
   - name: instalar proyecto
     command: mvn clean install
+    # Es totalmente necesario indicar donde se encuentra el pom.xml
+    args: 
+      chdir: /home/vagrant/Proyecto-IV/imageCo
 
   - name: iniciar api
     command: mvn spring-boot:start
+    args: 
+      chdir: /home/vagrant/Proyecto-IV/imageCo
 
 ´´´
 
 La estructura de este fichero es sencilla, primero se indica en que máquinas virtuales afecta (en este caso todas) y para cada máquina ejecutará todos las tareas (task).
 Las tareas ejecutadas instalan y actualizan las aplicaciones necesarias para levantar el servicio, cada nombre (name) es una breve descripción de lo que realizan.
 
+#### VagrantCloud
+
+Subir la imagen a VagrantCloud es tan sencillo como crearse una cuenta, crear una nueva Vagrant Box.
+Una vez hecho esto ejecutamos situados en el directorio del proyecto ejecutamos "vagrant package --output proyectoIV.box" para crear la imagen (se nos creará un archivo .box en el directorio).Tras ello nos vamos a VagrantCloud y dentro de el Box que habiamos creado previamente añadimos la imagen pulsando en "Add a provider" (debemos introducir que el provider es virtualbox y subir el archivo .box).
+
+VagrantCloud: https://app.vagrantup.com/jesusrpII/boxes/proyectoIV
 ### Bibliografía
 
 https://www.vagrantup.com/docs/provisioning/ansible_intro.html

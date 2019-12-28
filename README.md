@@ -39,6 +39,12 @@ Contenedor: https://proyectoivdocker.azurewebsites.net/
 
 - [Cómo se ha creado y desplegado en contenedor utilizando Docker](https://github.com/jesusrpII/Proyecto-IV/tree/master/doc/docker.md)
 
+### Creación de máquinas virtuales y su aprovisionamiento
+
+Provision: ansible/playbook.yml
+
+- [Creación y provisión de máquinas virtuales](https://github.com/jesusrpII/Proyecto-IV/tree/master/doc/provisionamiento.md)
+
 ### Información adicional
 
 - [Herramientas a utilizar](https://github.com/jesusrpII/Proyecto-IV/tree/master/doc/herramientas.md)
