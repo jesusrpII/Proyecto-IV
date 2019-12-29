@@ -26,7 +26,7 @@ Resultados en Ubuntu 18.04:
 
 Los datos más relevantes son las solicitudes por segundo en el que como se puede observar en las imagenes ubuntu 16 es mejor con 2256 solicitudes/segundo frente a 2101 que ofrece ubuntu 18. Sin embargo, ubuntu 18 nos ofrece en el tiempo de respuesta más largo 118 ms frente a los 443 ms que ofrece ubuntu 16.
 
-Me ha costado decidirme pero a la vista de los resultados he elegido ubuntu 18.06 ya que además de lo anteriomente dicho es más actual.
+Me ha costado decidirme pero a la vista de los resultados he elegido ubuntu 18.06 ya que además de lo anteriormente dicho es más actual.
 
 
 
@@ -111,7 +111,7 @@ Ansible será el encargado de provisionar nuestras máquinas virtuales, para ell
     command: mvn spring-boot:start
     args: 
       chdir: /home/vagrant/Proyecto-IV/imageCo
-``
+```
 
 La estructura de este fichero es sencilla, primero se indica en que máquinas virtuales afecta (en este caso todas) y para cada máquina ejecutará todos las tareas (task).
 Las tareas ejecutadas instalan y actualizan las aplicaciones necesarias para levantar el servicio, cada nombre (name) es una breve descripción de lo que realizan.
@@ -122,6 +122,9 @@ Subir la imagen a VagrantCloud es tan sencillo como crearse una cuenta, crear un
 Una vez hecho esto ejecutamos situados en el directorio del proyecto ejecutamos "vagrant package --output proyectoIV.box" para crear la imagen (se nos creará un archivo .box en el directorio).Tras ello nos vamos a VagrantCloud y dentro de el Box que habiamos creado previamente añadimos la imagen pulsando en "Add a provider" (debemos introducir que el provider es virtualbox y subir el archivo .box).
 
 VagrantCloud: https://app.vagrantup.com/jesusrpII/boxes/proyectoIV
+
+(Debido a mi conexión a internet he tenido problemas para subir la imagen ya que pesa más de 1700 MB, en cuanto vuelva de vacaciones lo subo, aun así dejo el link para que se vea que todo lo demás esta listo para la subida solo falta el archivo mismo)
+
 ### Bibliografía
 
 https://www.vagrantup.com/docs/provisioning/ansible_intro.html
