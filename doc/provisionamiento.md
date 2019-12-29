@@ -4,7 +4,7 @@ Para el provisionamiento se ha hecho uso de [Vagrant](https://www.vagrantup.com/
 
 ### Elección del SO
 
-Se va a utilizar ubuntu como sistema operativo ya que es un sistema con el que estoy familiarizado, ofrece buen rendimiento y no suele dar muchos problemas. En principio probé con las dos últimas versiones ubuntu xenial (16.04) y ubuntu Bionic (18.04) (ubuntu 14 la descarté ya que es bastante antigua y es una buena práctica tratar de tener el SO más actualizado).
+Se va a utilizar ubuntu como sistema operativo ya que es un sistema con el que estoy familiarizado, ofrece buen rendimiento y no suele dar muchos problemas. En un principio probé con las dos últimas versiones ubuntu xenial (16.04) y ubuntu Bionic (18.04) (ubuntu 14 la descarté ya que es bastante antigua y es una buena práctica tratar de tener el SO más actualizado).
 
 Vagrant ofrece en [https://app.vagrantup.com/boxes/search] bastantes sistemas operativos (llamados box por vagrant), en mi caso busqué estas dos distribuciones de ubuntu en su version minimal ya que pesan mucho menos que el SO completo ya que no incluyen todas las funciones pero para nuestro caso van a ser más que suficientes.
 
@@ -111,8 +111,7 @@ Ansible será el encargado de provisionar nuestras máquinas virtuales, para ell
     command: mvn spring-boot:start
     args: 
       chdir: /home/vagrant/Proyecto-IV/imageCo
-
-´´´
+``
 
 La estructura de este fichero es sencilla, primero se indica en que máquinas virtuales afecta (en este caso todas) y para cada máquina ejecutará todos las tareas (task).
 Las tareas ejecutadas instalan y actualizan las aplicaciones necesarias para levantar el servicio, cada nombre (name) es una breve descripción de lo que realizan.
