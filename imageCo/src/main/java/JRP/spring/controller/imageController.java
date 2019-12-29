@@ -33,7 +33,7 @@ public class imageController {
 
     @GetMapping("/")
     public String listUploadedFiles(Model model) {
-        return "formSubirImagen";
+        return "formSubirImagen.html";
     }
 
     @PostMapping("/comprimido")
